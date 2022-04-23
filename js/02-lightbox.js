@@ -13,20 +13,18 @@ function createGalleryItemsMarkup(galleryItems) {
 
     return galleryItems.map(({ preview, original, description }) => {
         return `<a class="gallery__item" href="${original}">
-  <img class="gallery__image" src="${preview}" alt="${description}" />
+  <img class="gallery__image" src="${preview}" alt="${description}" title="${description}"/>
 </a>`
     }).join('');
 };
 
 function onOpenSlider(e) {
-    const isImgEl = e.target.classList.contains('gallery__image');
+      const isImgEl = e.target.classList.contains('gallery__image');
 
     if (!isImgEl) {
         return;
     }
-    e.preventDefault();
+     e.preventDefault();
 
-    e.target.setAttribute('title', e.target.alt)
-
-    var lightbox = new SimpleLightbox('.gallery a', {});
+    let lightbox = new SimpleLightbox ('.gallery a', {captionDelay: 250});
 }
