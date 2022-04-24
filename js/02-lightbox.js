@@ -17,14 +17,8 @@ function createGalleryItemsMarkup(galleryItems) {
 </a>`
     }).join('');
 };
+function onOpenSlider() {
+    
+};
 
-function onOpenSlider(e) {
-      const isImgEl = e.target.classList.contains('gallery__image');
-
-    if (!isImgEl) {
-        return;
-    }
-   /*   e.preventDefault(); */
-
-    let lightbox = new SimpleLightbox ('.gallery a', {captionDelay: 250});
-}
+let lightbox = new SimpleLightbox('.gallery a', { captionDelay: 250 });
