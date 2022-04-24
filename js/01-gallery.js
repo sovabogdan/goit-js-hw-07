@@ -34,12 +34,15 @@ function onOpenLargeImg(e) {
     e.preventDefault();
 
     const largeImgLink = e.target.dataset.source;
-const instance = basicLightbox.create(`
+
+	const instance = basicLightbox.create(`
     
         <img src = "${largeImgLink}" alt= "${e.target.alt}">
     
-`)
-
+`, {
+		onShow: (instance) => addEventListener('onShow', instance),
+		onClose: (instance) => removeEventListener('onClose', instance)
+	})
 instance.show()
     
 }

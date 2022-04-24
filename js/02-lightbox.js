@@ -24,7 +24,7 @@ function onOpenSlider(e) {
     if (!isImgEl) {
         return;
     }
-     e.preventDefault();
+   /*   e.preventDefault(); */
 
     let lightbox = new SimpleLightbox ('.gallery a', {captionDelay: 250});
 }
